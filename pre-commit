@@ -1,0 +1,13 @@
+#!/bin/sh
+
+regex='@live\.com$' 
+email=$GIT_AUTHOR_EMAIL 
+
+if [[ $email =~ $regex ]];
+then
+	echo $email is following the git email policy 
+	exit 0 
+else 
+	echo "$email is not following git email policy" 
+	exit 1 
+fi
